@@ -6,6 +6,7 @@ require('./lib/project')
 
 
 get('/')do
+  @list = Item.all()
   erb(:input)
 end
 
@@ -15,5 +16,13 @@ post('/output') do
   rank = params.fetch("rank")
   @item = Item.new(name, rank)
   @item.add(@item.name, @item.rank)
-  erb(:output)
+  @list = Item.all()
+  erb(:input)
+end
+
+post('/delete/:id') do
+  id = params[:id]
+  Item.delete(id)
+  @list = Item.all()
+  erb(:input)
 end

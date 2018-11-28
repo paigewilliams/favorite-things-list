@@ -7,3 +7,12 @@
   <input type="number" name="rank"><br>
   <input type="submit" name="submit" value="submit">
 </form>
+<div class="list">
+  <ul>
+  <% @list.each do |item| %>
+  <li>Name: <%= item[0] %>, Rank: <%= item[1] %></li>
+
+  <a href = '/delete/<%= item[2] %>' method="post"><input type="button" name="delete" value="delete"></a>
+  <% end %>
+</ul>
+</div>
