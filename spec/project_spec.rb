@@ -87,5 +87,13 @@ describe("Item")do
     expect(Item.exist?("bunnies")).to(eq(true))
     end
   end
+  describe("#update")do
+    it("updates an item's name and rank based on user input")do
+    first_item = Item.new("bunnies", 5)
+    first_item.add(first_item.name, first_item.rank)
+    Item.update("frog", 4, 0)
+    expect(Item.all()).to(eq([["frog", 4, 0]]))
+    end
+  end
 
 end

@@ -1,0 +1,13 @@
+<h1>Edit your favorite thing!</h1>
+
+<form class="" action="/update" method="post">
+  <label for="name">Name of favorite thing</label>
+  <input type="text" name="name" value=
+  "<%= @name %>"><br>
+  <label for="name">Rank of favorite thing</label>
+  <input type="text" name="rank" value=
+  "<%= @rank %>"><br>
+  <input type="hidden" name="id" value=
+  "<%= @id %>"><br>
+  <input type="submit" name="save" value="save">
+</form>

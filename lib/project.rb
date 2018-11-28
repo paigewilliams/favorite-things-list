@@ -18,6 +18,13 @@ class Item
     @@list.push([name, rank, @id])
   end
 
+  def self.update(name, rank, id)
+    item = Item.find(id)
+    item[0] = name
+    item[1] = rank
+    item[2] = id
+  end
+
   def self.all
     @@list
   end
